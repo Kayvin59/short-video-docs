@@ -1,19 +1,11 @@
 'use client';
 import {
-  Address,
   Avatar,
-  EthBalance,
-  Identity,
-  Name,
+  Name
 } from '@coinbase/onchainkit/identity';
 import {
   ConnectWallet,
-  Wallet,
-  WalletDropdown,
-  WalletDropdownBasename,
-  WalletDropdownDisconnect,
-  WalletDropdownFundLink,
-  WalletDropdownLink,
+  Wallet
 } from '@coinbase/onchainkit/wallet';
 
 type WalletWrapperParams = {
@@ -22,7 +14,6 @@ type WalletWrapperParams = {
   withWalletAggregator?: boolean;
 };
 export default function WalletWrapper({
-  className,
   text,
   withWalletAggregator = false,
 }: WalletWrapperParams) {
@@ -32,25 +23,11 @@ export default function WalletWrapper({
         <ConnectWallet
           withWalletAggregator={withWalletAggregator}
           text={text}
-          className={className}
+          className="bg-blue-base text-white px-4 py-2 rounded-lg"
         >
           <Avatar className="h-6 w-6" />
           <Name />
         </ConnectWallet>
-        <WalletDropdown>
-          <Identity className="px-4 pt-3 pb-2" hasCopyAddressOnClick={true}>
-            <Avatar />
-            <Name />
-            <Address />
-            <EthBalance />
-          </Identity>
-          <WalletDropdownBasename />
-          <WalletDropdownLink icon="wallet" href="https://wallet.coinbase.com">
-            Go to Wallet Dashboard
-          </WalletDropdownLink>
-          <WalletDropdownFundLink />
-          <WalletDropdownDisconnect />
-        </WalletDropdown>
       </Wallet>
     </>
   );

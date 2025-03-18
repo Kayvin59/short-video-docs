@@ -12,6 +12,12 @@ const config: Config = {
         xl: '1280px',
       },
     },
+    colors: {
+      // #0052FF
+      blue: {
+        base: '#0052FF',
+      },
+    },
   },
   plugins: [],
 };

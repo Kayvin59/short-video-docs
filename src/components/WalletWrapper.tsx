@@ -1,6 +1,5 @@
 'use client';
 import {
-  Avatar,
   Name
 } from '@coinbase/onchainkit/identity';
 import {
@@ -12,20 +11,23 @@ type WalletWrapperParams = {
   text?: string;
   className?: string;
   withWalletAggregator?: boolean;
+  onConnect?: () => void;
 };
 export default function WalletWrapper({
+  className,
   text,
   withWalletAggregator = false,
+  onConnect = () => {},
 }: WalletWrapperParams) {
   return (
     <>
       <Wallet>
         <ConnectWallet
           withWalletAggregator={withWalletAggregator}
-          text={text}
-          className="bg-blue-base text-white px-4 py-2 rounded-lg"
+          className={className} // Replace by this in animation className="bg-blue-base text-white px-4 py-2 rounded-lg"
+          text={text} // hide text then Replace by "Sign up" or "Log in"
+          onConnect={onConnect} // Replace by this in animation onConnect={() => console.log('Connected')}
         >
-          <Avatar className="h-6 w-6" />
           <Name />
         </ConnectWallet>
       </Wallet>

@@ -8,6 +8,9 @@
   --palette-bg-black: #fff;
   --palette-bg-white: rgb(21, 26, 38);
 
+  --gray-900: 17 24 39;
+  --black: 0 0 0;
+
   /* Indicates that the element can be rendered using 
    * the operating system dark color scheme. 
    * https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme */

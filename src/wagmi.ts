@@ -6,8 +6,9 @@ import {
   rainbowWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 import { useMemo } from 'react';
-import { http, createConfig } from 'wagmi';
-import { base, baseSepolia } from 'wagmi/chains';
+import { http } from 'viem';
+import { base, baseSepolia } from 'viem/chains';
+import { createConfig } from 'wagmi';
 import { NEXT_PUBLIC_WC_PROJECT_ID } from './config';
 
 export function useWagmiConfig() {

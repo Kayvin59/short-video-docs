@@ -30,7 +30,8 @@ export default function Video({ steps }: { steps: TutorialStep[] }) {
       {/* Right Panel: Preview (30% width) */}
       <div className="w-[30%] bg-gray-900 p-6 flex items-center justify-center">
         {steps.map((step, index) => {
-          const from = steps.reduce((acc, step) => acc + step.duration, 1)
+          const from = rightCumulative;
+          rightCumulative += step.duration;
           return (
             <Sequence
               key={index}

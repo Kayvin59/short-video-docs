@@ -1,7 +1,8 @@
+/* onchainKit CSS style */
+@import "@coinbase/onchainkit/styles.css";
+
 /* tailwind.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* onchainKit CSS style */
-@import '@coinbase/onchainkit/styles.css';

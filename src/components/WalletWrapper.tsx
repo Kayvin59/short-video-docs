@@ -1,22 +1,15 @@
 'use client';
-import {
-  Name
-} from '@coinbase/onchainkit/identity';
-import {
-  ConnectWallet,
-  Wallet
-} from '@coinbase/onchainkit/wallet';
+import { Name } from '@coinbase/onchainkit/identity';
+import { ConnectWallet, Wallet } from '@coinbase/onchainkit/wallet';
 
 type WalletWrapperParams = {
   text?: string;
   className?: string;
-  withWalletAggregator?: boolean;
   onConnect?: () => void;
 };
 export default function WalletWrapper({
   className,
   text,
-  withWalletAggregator = false,
   onConnect = () => {},
 }: WalletWrapperParams) {
   return (

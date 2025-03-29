@@ -21,7 +21,7 @@ function OnchainProviders({ children }: Props) {
       <QueryClientProvider client={queryClient}>
         <OnchainKitProvider apiKey={NEXT_PUBLIC_CDP_API_KEY} chain={base}>
           {/* <RainbowKitProvider modalSize="compact"> */}
-            {children}
+          {children}
           {/* </RainbowKitProvider> */}
         </OnchainKitProvider>
       </QueryClientProvider>

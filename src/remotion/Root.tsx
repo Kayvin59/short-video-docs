@@ -3,11 +3,10 @@ import Video from './Video';
 import { STEPS } from './steps';
 import './tailwind.css';
 
-
 const totalDuration = STEPS.reduce((acc, step) => acc + step.duration, 1);
 
 export default function RemotionRoot() {
-    return (
+  return (
     <Composition
       id="WalletTutorial"
       component={Video}

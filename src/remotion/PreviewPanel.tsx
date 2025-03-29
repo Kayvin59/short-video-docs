@@ -10,14 +10,14 @@ export function PreviewPanel({ stepIndex }: { stepIndex: number }) {
       return (
         <WalletWrapper
           text="Log in"
-          className="bg-blue-base text-white px-4 py-2 rounded-lg"
+          className="rounded-lg bg-blue-base px-4 py-2 text-white"
         />
       );
     case 3:
       return (
         <WalletWrapper
           text="Log in"
-          className="bg-blue-base text-white px-4 py-2 rounded-lg"
+          className="rounded-lg bg-blue-base px-4 py-2 text-white"
           onConnect={() => alert('Wallet connected!')}
         />
       );

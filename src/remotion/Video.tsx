@@ -1,8 +1,7 @@
 import { AbsoluteFill, Sequence } from 'remotion';
 import { Code } from './Code';
 import { PreviewPanel } from './PreviewPanel';
-import { TutorialStep } from './steps';
-
+import type { TutorialStep } from './steps';
 
 export default function Video({ steps }: { steps: TutorialStep[] }) {
   let cumulative = 0;
@@ -10,13 +9,13 @@ export default function Video({ steps }: { steps: TutorialStep[] }) {
   return (
     <AbsoluteFill className="flex">
       {/* Left Panel: Code (70% width) */}
-      <div className="w-[70%] bg-[#1e1e1e] p-6 overflow-auto">
-        {steps.map((step, index) => {
+      <div className="w-[70%] overflow-auto bg-[#1e1e1e] p-6">
+        {steps.map((step) => {
           const from = cumulative;
           cumulative += step.duration;
           return (
             <Sequence
-              key={index}
+              key={step.title}
               from={from}
               durationInFrames={step.duration}
               name={step.title}
@@ -26,19 +25,21 @@ export default function Video({ steps }: { steps: TutorialStep[] }) {
           );
         })}
       </div>
-      
+
       {/* Right Panel: Preview (30% width) */}
-      <div className="w-[30%] bg-gray-900 p-6 flex items-center justify-center">
-        {steps.map((step, index) => {
-          const from = steps.reduce((acc, step) => acc + step.duration, 1)
+      <div className="flex w-[30%] items-center justify-center bg-gray-900 p-6">
+        {steps.map((step) => {
+          const from = cumulative;
+          cumulative += step.duration;
+          const stepIndex = steps.findIndex((s) => s.title === step.title);
           return (
             <Sequence
-              key={index}
+              key={step.title}
               from={from}
               durationInFrames={step.duration}
               name={step.title}
             >
-              <PreviewPanel stepIndex={index} />
+              <PreviewPanel stepIndex={stepIndex} />
             </Sequence>
           );
         })}

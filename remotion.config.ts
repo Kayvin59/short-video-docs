@@ -1,13 +1,4 @@
-import { Config } from "@remotion/cli/config";
-
-
-const codeHikeConfig = {
-  theme: "github-dark",
-  autoImport: false,
-  parseOptions: {
-    steps: true, // Enable step parsing
-  },
-};
+import { Config } from '@remotion/cli/config';
 
 Config.overrideWebpackConfig((currentConfig) => {
   return {
@@ -20,7 +11,7 @@ Config.overrideWebpackConfig((currentConfig) => {
           test: /\.mdx?$/,
           use: [
             {
-              loader: "@mdx-js/loader",
+              loader: '@mdx-js/loader',
             },
           ],
         },
@@ -28,4 +19,3 @@ Config.overrideWebpackConfig((currentConfig) => {
     },
   };
 });
-

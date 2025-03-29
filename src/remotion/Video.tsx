@@ -26,7 +26,7 @@ export default function Video({ steps }: { steps: TutorialStep[] }) {
         })}
       </div>
 
-      {/* Right Panel: Preview (30% width) */}
+      {/* Right Panel: Preview (30% width)  */}
       <div className="flex w-[30%] items-center justify-center bg-gray-900 p-6">
         {steps.map((step) => {
           const from = cumulative;

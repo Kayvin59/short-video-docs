@@ -45,8 +45,8 @@ importers:
         specifier: ^15.6.1
         version: 15.6.1(react@18.3.1)
       remotion:
-        specifier: 4.0.278
-        version: 4.0.278(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.0.280
+        version: 4.0.280(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       siwe:
         specifier: ^2.3.2
         version: 2.3.2(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@6.0.5))
@@ -3115,12 +3115,6 @@ packages:
 
   regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
-
-  remotion@4.0.278:
-    resolution: {integrity: sha512-W/9+QRSrePmPo8+HmbE42G/oPHmONGzxysSQwvrQBOcG98GbOzgSOOSqOgYKfi2LOz0jyF/NQtdws27JOSP+dw==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
 
   remotion@4.0.280:
     resolution: {integrity: sha512-axo7mjt5h469oP5gAcuPI6gtwefg7OhooV/FKBSum2Iw+pxzXcpFNScxK9Qi31kddNcfg4p4MoAvBRDFy4XqvQ==}
@@ -7408,11 +7402,6 @@ snapshots:
       prismjs: 1.27.0
 
   regenerator-runtime@0.14.1: {}
-
-  remotion@4.0.278(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   remotion@4.0.280(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:

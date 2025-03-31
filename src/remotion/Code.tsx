@@ -8,6 +8,9 @@ export function Code({ code }: { code: string }) {
         language="typescript"
         style={materialOceanic}
         showLineNumbers={true}
+        wrapLines={true}
+        wrapLongLines={true}
+        customStyle={ { width: '50%', margin: '0', backgroundColor: '#263238' } }
       >
         {code}
       </SyntaxHighlighter>

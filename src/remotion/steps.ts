@@ -11,45 +11,104 @@ export interface TutorialStep {
 
 export const STEPS: TutorialStep[] = [
   {
-    title: 'Basic Connect',
+    title: 'Wallet default',
     code: `
-      <ConnectWallet>
-        <Name />
-      </ConnectWallet>`,
-    duration: 450,
+      export default function WalletWrapper() {
+        return (
+          <>
+            <Wallet />
+          </>
+        );
+      }`,
+    duration: 300,
     props: {},
   },
   {
-    title: 'Sign Up',
+    title: 'Wallet Connect',
     code: `
-      <ConnectWallet text="Sign up">
-        <Name />
-      </ConnectWallet>`,
-    duration: 450,
-    props: { text: 'Sign up' },
+      export default function WalletWrapper() {
+        return (
+          <>
+            <Wallet>
+              <ConnectWallet />
+            </Wallet>
+          </>
+        );
+      }`,
+    duration: 300,
+    props: {},
   },
   {
-    title: 'Styled Login',
+    title: 'Wallet Identity',
     code: `
-      <ConnectWallet 
-        className="bg-blue-base text-white px-4 py-2 rounded-lg"
-        text="Log in"
-      >
-        <Name />
-      </ConnectWallet>`,
-    duration: 450,
-    props: {
-      text: 'Log in',
-      className: 'bg-blue-base text-white px-4 py-2 rounded-lg',
-    },
+      export default function WalletWrapper() {
+        return (
+          <>
+            <Wallet>
+              <ConnectWallet >
+                <Name />
+              </ConnectWallet>
+            </Wallet>
+          </>
+        );
+      }`,
+    duration: 300,
+    props: {},
   },
   {
-    title: 'With Handler',
+    title: 'Wallet Custom text',
     code: `
-      <ConnectWallet onConnect={() => alert('Connected!')}>
-        <Name />
-      </ConnectWallet>`,
-    duration: 450,
-    props: { onConnect: () => console.log('Connected!') },
+      export default function WalletWrapper() {
+        return (
+          <>
+            <Wallet>
+              <ConnectWallet >
+                <ConnectWalletText>login<ConnectWalletText/>
+              </ConnectWallet>
+            </Wallet>
+          </>
+        );
+      }`,
+    duration: 300,
+    props: {},
+  },
+  {
+    title: 'Wallet Custom style',
+    code: `
+      export default function WalletWrapper() {
+        return (
+          <>
+            <Wallet>
+              <ConnectWallet 
+                className="bg-blue-base text-white px-4 py-2 rounded-lg"
+              >
+                <ConnectWalletText>login<ConnectWalletText/>
+              </ConnectWallet>
+            </Wallet>
+          </>
+        );
+      }`,
+    duration: 300,
+    props: {},
+  },
+  {
+    title: 'Wallet Callback',
+    code: `
+      export default function WalletWrapper() {
+        return (
+          <>
+            <Wallet>
+              <ConnectWallet 
+                className="bg-blue-base text-white px-4 py-2 rounded-lg"
+                onConnect={() => alert('Connected!')}
+              >
+                <ConnectWalletText>login<ConnectWalletText/>
+              </ConnectWallet>
+            </Wallet>
+          </>
+        );
+      }`,
+    duration: 300,
+    props: {},
   },
 ];

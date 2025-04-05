@@ -1,5 +1,5 @@
 import { Composition } from 'remotion';
-import Video from './Video';
+import Tutorial from './Tutorial';
 import { STEPS } from './steps';
 import './tailwind.css';
 
@@ -9,7 +9,7 @@ export default function RemotionRoot() {
   return (
     <Composition
       id="WalletTutorial"
-      component={Video}
+      component={Tutorial}
       defaultProps={{ steps: STEPS }}
       durationInFrames={totalDuration}
       fps={30} // e.g., 1800 frames for 60s at 30fps

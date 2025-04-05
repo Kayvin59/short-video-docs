@@ -1,15 +1,15 @@
-import { AbsoluteFill, Sequence } from 'remotion';
+import { AbsoluteFill, Sequence, Video, staticFile } from 'remotion';
 import { Code } from './Code';
 import { PreviewPanel } from './PreviewPanel';
 import type { TutorialStep } from './steps';
 
-export default function Video({ steps }: { steps: TutorialStep[] }) {
+export default function Tutorial({ steps }: { steps: TutorialStep[] }) {
   let cumulative = 0;
 
   return (
-    <AbsoluteFill className="flex">
-      {/* Left Panel: Code (70% width) */}
-      <div className="w-[70%] overflow-auto bg-[#1e1e1e] p-6">
+    <AbsoluteFill className="flex flex-row">
+      {/* Left Panel: Code (50% width) */}
+      <div className="w-1/2 overflow-auto">
         {steps.map((step) => {
           const from = cumulative;
           cumulative += step.duration;
@@ -26,8 +26,14 @@ export default function Video({ steps }: { steps: TutorialStep[] }) {
         })}
       </div>
 
-      {/* Right Panel: Preview (30% width)  */}
-      <div className="flex w-[30%] items-center justify-center bg-gray-900 p-6">
+      {/* Right Panel: Preview (50% width)  */}
+      <div className="relative w-1/2">
+        <Video
+          src={staticFile('remotion-record1.mp4')}
+          startFrom={0}
+          endAt={450}
+          className="w-full h-full object-cover"
+        />
         {steps.map((step) => {
           const from = cumulative;
           cumulative += step.duration;

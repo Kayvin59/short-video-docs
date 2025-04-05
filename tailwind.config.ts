@@ -20,6 +20,7 @@ const config: Config = {
       black: '#000',
       blue: {
         base: '#0052FF',
+        950: '#263238',
       },
       gray: {
         100: '#f3f4f6',
